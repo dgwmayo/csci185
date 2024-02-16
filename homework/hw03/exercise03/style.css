@@ -1,7 +1,4 @@
-/* 
-   Tip: The @import link to the Google font needs to be on the first line
-   of the stylesheet (above this comment).
-*/
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap');
 
 html {
     scroll-behavior: smooth;
@@ -15,3 +12,9 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
 }
+   h1, h2 {
+        font-family: "Chakra Petch", sans-serif;
+        font-weight: 400;
+        font-weight: bold;
+        font-style: normal;    
+   }
