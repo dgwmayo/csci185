@@ -1,0 +1,53 @@
+.banner {
+    border: solid 2px black;
+    padding: 20px;
+}
+
+.logo {
+    font-size: xx-large;
+    border: 2px solid black;
+    padding: 20px;
+    text-align: center;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.navigation {
+    border: 2px solid black;
+    padding: 10px;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.sheep {
+    margin: auto;
+}
+
+.items {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    height: 130vh;
+    width: 60vw;
+    /* margin-left: 10vw;
+    margin-right: 10vw; */
+    padding: 5px;
+    justify-content: center;
+    margin: auto;
+ }
+
+ .items div {
+    background: #FFF;
+    margin: 30px;
+    padding: 5px;
+    border: 2px solid black;
+    align-items: center;
+ }
+
+ @media screen and (max-width: 800px) {
+    .items {
+        height: 100vh;
+        width: 83vw;
+    }
+ }
