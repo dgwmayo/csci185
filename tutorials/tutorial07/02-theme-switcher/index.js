@@ -1,21 +1,26 @@
 function defaultTheme() {
-    // your code here.
-    
+    const bodyEl = document.querySelector("body");
+    bodyEl.className = "default";
 }
 
 function oceanTheme() {
-   // your code here.
+   const bodyEl = document.querySelector("body");
+   bodyEl.className = "ocean";
    
 }
 
 function desertTheme() {
-   // your code here.
+    const bodyEl = document.querySelector("body");
+    bodyEl.className = "desert";
 }
 
 function highContrastTheme() {
-    // your code here.
+    const bodyEl = document.querySelector("body");
+   bodyEl.className = "high-contrast";
 }
 
+function changeTheme(myClass) {
+    bodyEl.className = myClass}
 /*
     Hints: 
     1. Attach the event handlers (functions) above to the click event
