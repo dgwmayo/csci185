@@ -1,3 +1,7 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&family=Special+Elite&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&family=Pirata+One&family=Special+Elite&display=swap');
+
 .alert {
     padding: 20px;
     background-color: #000000;
@@ -6,6 +10,10 @@
     margin-bottom: 15px;
     box-sizing: border-box;
     margin: 0;
+    font-family: "Pirata One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: x-large;
 }
 
 .closebtn {
@@ -40,7 +48,11 @@
     padding: 15px;
 }
 
-
+nav {
+    font-family: "Special Elite", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
 
 ul {
     list-style-type: none;
@@ -124,4 +136,11 @@ li.dropdown {
 
 .image-1 {
     background-image: url(./barbedwire.jpg);
+} */
+/* 
+html.fixed-background {
+    background-image: url(./barbedwire.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
 } */
