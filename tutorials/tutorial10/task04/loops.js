@@ -8,7 +8,7 @@ const studentList = [
     {
         name: "Atlas",
         image_url: "https://i.pravatar.cc/150?id=1",
-        favorite_color: getRandomColor(),
+        favorite_color: "aquamarine",
     },
     {
         name: "Avery",
@@ -116,12 +116,12 @@ function showStudents() {
         console.log(i, studentList[i].favorite_color)
         const myTemplate = ` 
             <section class="card">
-                <img src="https://i.pravatar.cc/150?id=1" />
-                <p>Name: <strong>Walter</strong></p>
-                <p>Favorite Color: <strong>yellow</strong></p>
+                <img src="${studentList[i].image_url}" />
+                <p>Name: <strong>${studentList[i].name}</strong></p>
+                <p>Favorite Color: <strong>${studentList[i].favorite_color}</strong></p>
             </section>`;
         // const myTemplate = `<p>${studentList[i]}</p>`;
-        // containerEl.insertAdjacentHTML("beforeend", myTemplate);
+        containerEl.insertAdjacentHTML("beforeend", myTemplate);
     }
 }
 
