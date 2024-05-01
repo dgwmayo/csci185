@@ -12,54 +12,100 @@ function search(ev) {
     }
 }
 
+function playTrack(trackId) {
+    const template = `
+    <iframe 
+        style="border-radius:12px" 
+        src="https://open.spotify.com/embed/track/${trackId}?utm_source=generator&theme=0" 
+        width="100%" 
+        height="352" 
+        frameBorder="0" 
+        allowfullscreen="" 
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+        loading="lazy">
+    </iframe>
+    `;
+    document.querySelector("#artist").innerHTML = template;
+}
+
+
 async function getTracks(term) {
-    console.log(`
-        get tracks from spotify based on the search term
-        "${term}" and load them into the #tracks section 
-        of the DOM...`);
+    const url = `https://www.apitutor.org/spotify/simple/v1/search?type=track&q=${term}`;
+    const response = await fetch(url);
+    const trackData = await response.json();
+   console.log(trackData);
+
+   document.querySelector("#tracks").innerHTML = "";
+
+    for (let i = 0; i < 5; i++) {
+        const track = trackData[i];
+        const template = `
+        <section class="track-item preview" onclick="playTrack('${track.id}')">
+            <img src="${track.album.image_url}">
+            <i class="fas play-track fa-play" aria-hidden="true"></i>
+            <div class="label">
+                <h2>${track.name}</h2>
+                <p>${track.artist.name} </p>
+            </div>
+        </section>
+        `;
+        document.querySelector("#tracks").innerHTML += template;
+    }
 }
 
 async function getAlbums(term) {
-    console.log(`
-        get albums from spotify based on the search term
-        "${term}" and load them into the #albums section 
-        of the DOM...`);
+    const url = `https://www.apitutor.org/spotify/simple/v1/search?type=album&q=${term}`;
+    const response = await fetch(url);
+    const albumData = await response.json();
+    
+    document.querySelector("#albums").innerHTML = "";
+
+    for (let i = 0; i < 50; i++) {
+        const album = albumData[i];
+        const template = `
+            <section class="album-card" id="${album.id}">
+                <div>
+                    <img src="${album.image_url}">
+                    <h2>${album.name}</h2>
+                    <div class="footer">
+                        <a href="${album.spotify_url}" target="_blank">
+                            view on spotify
+                        </a>
+                    </div>
+                </div>
+            </section>
+        `;
+        document.querySelector("#albums").innerHTML += template;
+    }
 }
 
 async function getArtist(term) {
-    const url = `${baseURL}?q=${term}&type=artist&limit=1`;
-    console.log(url);
-    const request = await fetch(url);
-    const data = await request.json();
-    console.log(data);
-    console.log(data[0].name);
-    console.log(data[0].spotify_url);
-    console.log(data[0].image_url);
+    const url = `https://www.apitutor.org/spotify/simple/v1/search?type=artist&q=${term}`;
+    const response = await fetch(url);
+    const artistData = await response.json();
+    const artist = artistData[0];
 
-
-    // These are the steps to the problem:
-    // go to spotify API with the parameter term
-    //q=term&type=artist&limit=1
-    //instert it into the DOM
-
-    const snippet = `
-    <section class="artist-card" id="${data[0].id}">
-    <div>
-        <img src="${data[0].image_url}">
-        <h2>${data[0].name}</h2>
-        <div class="footer">
-            <a href="${data[0].spotify_url}" target="_blank">
-                view on spotify
-            </a>
-        </div>
-    </div>
-    </section>
+    const template = `
+        <section class="artist-card" id="${artist.id}">
+            <div>
+                <img src="${artist.image_url}">
+                <h2>${artist.name}</h2>
+                <div class="footer">
+                    <a href="${artist.spotify_url}" target="_blank">
+                        view on spotify
+                    </a>
+                </div>
+            </div>
+        </section>
     `;
 
-    const container = document.querySelecter('#artist');
-    container.innerHTML = snippet;
+    document.querySelector("#artist").innerHTML = template;
+}
 
-};
+// These are the steps to the problem:
+// go to spotify API with the parameter term
+//q=term&type=artist&limit=1
+//instert it into the DOM
 
 
 document.querySelector('#search').onkeyup = function (ev) {
