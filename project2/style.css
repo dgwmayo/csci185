@@ -1,0 +1,145 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  width: 100%;
+}
+
+.header {
+  color: white;
+  font-size: 50px;
+}
+
+.section {
+  height: 50%;
+  background: #293744;
+  color: #899eb5;
+}
+
+.scene {
+  height: 100%;
+  width: 100%;
+  background: #EAEAEA;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50%;
+}
+
+.viewer {
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 500px;
+  width: 100%;
+  background-image: url(../project2/finalwalk.png);
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+}
+
+.viewer.frame1 {
+  background-position: -500px 50%;
+}
+
+.viewer.frame2 {
+  background-position: -1000px 50%;
+}
+
+.viewer.frame3 {
+  background-position: -1500px 50%;
+}
+
+.viewer.frame4 {
+  background-position: -2000px 50%;
+}
+
+.viewer.frame5 {
+  background-position: -2500px 50%;
+}
+
+.viewer.frame6 {
+  background-position: -3000px 50%;
+}
+
+.viewer.frame7 {
+  background-position: -3500px 50%;
+}
+
+.viewer.frame8 {
+    background-position: -4000px 50%;
+  }
+  
+  .viewer.frame9 {
+    background-position: -4500px 50%;
+  }
+  
+  .viewer.frame10 {
+    background-position: -5000px 50%;
+  }
+  
+  .viewer.frame11 {
+    background-position: -5500px 50%;
+  }
+  
+  .viewer.frame12 {
+    background-position: -6000px 50%;
+  }
+  
+  .viewer.frame13 {
+    background-position: -6500px 50%;
+  }
+  
+  .viewer.frame14 {
+    background-position: -7000px 50%;
+  }
+
+  .viewer.frame15 {
+    background-position: -7500px 50%;
+  }
+  
+  .viewer.frame16 {
+    background-position: -8000px 50%;
+  }
+  
+  .viewer.frame17 {
+    background-position: -8500px 50%;
+  }
+  
+  .viewer.frame18 {
+    background-position: -9000px 50%;
+  }
+  
+  .viewer.frame19 {
+    background-position: -10000px 50%;
+  }
+  
+  .viewer.frame20 {
+    background-position: -10500px 50%;
+  }
+  
+  .viewer.frame21 {
+    background-position: -11000px 50%;
+  }
+
+  .viewer.frame22 {
+    background-position: -11500px 50%;
+  }
+
+  .viewer.frame23 {
+    background-position: -12000px 50%;
+  }
+
+p {
+    text-align: center;
+    padding: 10px;
+}
+
+h2, h3, h4 {
+    text-align: center;
+    font-size: medium;
+}
